@@ -1,4 +1,4 @@
-const MAX_USER_COUNT = 5;
+const MAX_USER_COUNT = 3;
 
 const socketFn = io => socket => {
   socket.on('join', room => {
@@ -8,7 +8,7 @@ const socketFn = io => socket => {
 
     const users = myRoom.size;
 
-    if (users <= MAX_USER_COUNT) {
+    if (users < MAX_USER_COUNT) {
       socket.emit('joined', room, socket.id);
       if (users > 1) {
         socket.to(room).emit('otherjoin', room, socket.id);
