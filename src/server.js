@@ -9,9 +9,12 @@ app.use(cors({
 const server = require('http').createServer(app.callback());
 
 
-const io = require('socket.io')(server); 
+const io = require('socket.io')(server, {
+  path: '/api/webrtc/'
+}); 
 io.on('connection', socket => {
   socket.on('join', room => {
+    console.log('join..', room);
     socket.join(room);
     const myRoom = io.sockets.adapter.rooms[room];
 
@@ -43,4 +46,4 @@ io.on('connection', socket => {
 
 const port = process.env.PORT || 3001;
 console.log(port);
-server.listen(port, () => console.log(`gh-oauth-server listening on port ${port}`))
+server.listen(port, () => console.log(`webrtc-token-server listening on port ${port}`))
