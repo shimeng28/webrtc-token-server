@@ -1,7 +1,7 @@
 module.exports = {
   apps: [
     {
-      name: 'gh-oauth', // 应用名称
+      name: 'webrtc-token-server', // 应用名称
       script: './src/server.js', // 启动文件地址
       cwd: './', // 当前工作路径
       watch: [
