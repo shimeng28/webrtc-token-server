@@ -1,0 +1,12 @@
+{
+  "name": "gh-oauth-server",
+  "version": "0.0.1",
+  "scripts": {
+    "start": "pm2 start ./pm2.config.js"
+  },
+  "dependencies": {
+    "@koa/cors": "^3.1.0",
+    "koa": "^2.13.1",
+    "socket.io": "^4.0.1"
+  }
+}
