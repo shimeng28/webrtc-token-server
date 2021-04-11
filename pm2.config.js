@@ -15,7 +15,7 @@ module.exports = {
       ],
       node_args: '--harmony', // node的启动模式
       env: {
-        PORT: 3000,
+        PORT: 3001,
         NODE_ENV: 'production', // 设置运行环境，此时process.env.NODE_ENV的值就是development
       },
       env_production: {
